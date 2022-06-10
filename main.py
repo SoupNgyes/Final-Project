@@ -1,37 +1,56 @@
 import random
 
-
+pcInp = random.randint(0, 2)
 pcWin = 0
 userWin = 0
 win = False
 play = True
 
-while play = True:
-  while tries > 0:
-    input = input("Rock, paper, or scissors?: ")
+if pcInp == 0:
+  pcInp = "rock"
 
-    if(humNum) == pcNum):
-      win = True
-      print("You Win")
-      break
-    elif int(humNum) > 10 or int(humNum) < 0:
-      print("You can't pick this number bozo.")
-    else:
-      tries -=1
-      print("Try Again")
-      print(f"You have {tries} tries left.")
+if pcInp == 1:
+  pcInp = "paper"
+
+if pcInp == 2:
+  pcInp = "scissors"
+
+
+while play == True:
+  while win == False:
+    uInp = input("Rock, paper, or scissors?: ")
+
+    if uInp == "rock" and pcInp == "paper":
+      win = False
+      print("You Lose")
       
+    elif uInp == "paper" and pcInp == "scissors":
+      win = False
+      print("You Lose!")
+    elif uInp == "scissors" and pcInp == "rock":
+      win = False
+      print("You Lose!")
+      
+    elif uInp == "rock" and pcInp == "rock":
+      win = False
+      print("Tie!")
+      
+    elif uInp == "paper" and pcInp == "paper":
+      win = False
+      print("Tie!")
+    elif uInp == "scissors" and pcInp == "scissors":
+      win = False
+      print("Tie!")
     
+
+
   if win == False:
-    print("Game Over")
-    print(f"The correct number was {pcNum}")
-  
-  again = input("Would you like to play again? Y/N: ")  
+    
+    again = input("Would you like to play again? Y/N: ")  
   if again == "Y":
     tries = 5
-    pcNum = random.randint(1,10)
+    pcInp = random.randint(0, 3)
   elif again == "N":
     print("Goodbye")
     play = False
 
-# comment to save code
