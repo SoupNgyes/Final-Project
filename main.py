@@ -1,56 +1,78 @@
 import random
 
 pcInp = random.randint(0, 2)
-pcWin = 0
-userWin = 0
-win = False
+
 play = True
 
-if pcInp == 0:
-  pcInp = "rock"
-
-if pcInp == 1:
-  pcInp = "paper"
-
-if pcInp == 2:
-  pcInp = "scissors"
-
-
+def game():
+  global pcInp
+  pcInp = random.randint(0,2)
+  if pcInp == 0:
+    pcInp = "rock"
+  
+  if pcInp == 1:
+    pcInp = "paper"
+  
+  if pcInp == 2:
+    pcInp = "scissors"
+  
+  
+  
+  uInp = input("Rock, paper, or scissors?: ")
+  
+  print(f"I chose: {pcInp}")
+  
+  if uInp == "rock" and pcInp == "paper":
+    
+    print("You Lose")
+    
+    
+  elif uInp == "paper" and pcInp == "scissors":
+    
+    print("You Lose!")
+    
+    
+  elif uInp == "scissors" and pcInp == "rock":
+    
+    print("You Lose!")
+    
+  elif uInp == "rock" and pcInp == "rock":
+    
+    print("Tie!")
+    
+    
+  elif uInp == "paper" and pcInp == "paper":
+    
+    print("Tie!")
+    
+    
+  elif uInp == "scissors" and pcInp == "scissors":
+    
+    print("Tie!")
+    
+    
+  elif uInp == "paper" and pcInp == "rock":
+    
+    print("WIN!")
+    
+    
+  elif uInp == "rock" and pcInp == "scissors":
+    
+    print("WIN!")
+    
+    
+  elif uInp == "scissors" and pcInp == "paper":
+    
+    print("WIN!")
+  
+  
+game()
 while play == True:
-  while win == False:
-    uInp = input("Rock, paper, or scissors?: ")
-
-    if uInp == "rock" and pcInp == "paper":
-      win = False
-      print("You Lose")
-      
-    elif uInp == "paper" and pcInp == "scissors":
-      win = False
-      print("You Lose!")
-    elif uInp == "scissors" and pcInp == "rock":
-      win = False
-      print("You Lose!")
-      
-    elif uInp == "rock" and pcInp == "rock":
-      win = False
-      print("Tie!")
-      
-    elif uInp == "paper" and pcInp == "paper":
-      win = False
-      print("Tie!")
-    elif uInp == "scissors" and pcInp == "scissors":
-      win = False
-      print("Tie!")
-    
-
-
-  if win == False:
-    
-    again = input("Would you like to play again? Y/N: ")  
+  again = input("Try Again? Y/N: ")
   if again == "Y":
-    tries = 5
-    pcInp = random.randint(0, 3)
+    game()    
+      
   elif again == "N":
     print("Goodbye")
-    play = False
+    break
 
